@@ -1,5 +1,7 @@
 # This is the settings for parse.py
 
+
+# Headers for the CSV file
 headers = [
         "Reviewer Name",  # reviewerName
         "Review content",  # reviewContent
@@ -10,7 +12,10 @@ headers = [
         "Reply text from Owner",  # replyTextFromOwner
     ]
 
+# The index of the reviews in the JSON response
 reviews_index = 2
+
+# The format of the review data, must match the headers order
 review_format = {
     "reviewerName": [0, 1],
     "reviewContent": [3],

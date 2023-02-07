@@ -19,3 +19,8 @@ This script was written in Pakistan so it may not be usable outside of Pakistan 
 ## Certificate Errors
 
 If you get a certificate error, you can ignore it. The script will still work. Or you can install the Selenium Wire certifcate to get rid of the error.
+
+
+## Additional Data
+
+If you need to parse additional data, simply add the corresponding header and the necessary array navigation in the `settings.py` file.
