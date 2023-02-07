@@ -13,3 +13,7 @@ This script was written in Pakistan so it may not be usable outside of Pakistan 
 2. Run the script using `python parse.py`
 3. Enter the search string when prompted
 4. Wait for the script to complete running
+
+## Certificate Errors
+
+If you get a certificate error, you can ignore it. The script will still work. Or you can install the Selenium Wire certifcate to get rid of the error.
