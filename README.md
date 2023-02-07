@@ -10,9 +10,11 @@ This script was written in Pakistan so it may not be usable outside of Pakistan 
 ## Usage
 
 1. Install requirements using `pip install -r requirements.txt`
-2. Run the script using `python parse.py`
-3. Enter the search string when prompted
-4. Wait for the script to complete running
+2. Navigate to the `Parser` directory
+3. Run the script using `python parse.py`
+4. Enter the search string when prompted
+5. Wait for the script to complete running
+6. Reviews will be saved in a CSV file named `reviews.csv` in the same directory where you run the script from
 
 ## Certificate Errors
 

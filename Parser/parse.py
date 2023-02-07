@@ -1,3 +1,4 @@
+import settings
 import csv
 import time
 import json
@@ -10,26 +11,6 @@ query = input('Enter a search query: ')
 
 
 class ReviewParser:
-    headers = [
-        "Reviewer Name",  # reviewerName
-        "Review content",  # reviewContent
-        "Full review link",  # fullReviewLink
-        "Rating",  # rating
-        "Review Time Information",  # reviewTimeInformation
-        "Did the shop owner reply",  # didOwnerReply
-        "Reply text from Owner",  # replyTextFromOwner
-    ]
-    reviews_index = 2
-    review_format = {
-        "reviewerName": [0, 1],
-        "reviewContent": [3],
-        "fullReviewLink": [18],
-        "rating": [4],
-        "reviewTimeInformation": [1],
-        "didOwnerReply": [9],
-        "replyTextFromOwner": [9, 1]  # only if didOwnerReply is true
-    }
-
     reviews_count = 0
 
     options = webdriver.ChromeOptions()
@@ -94,14 +75,14 @@ class ReviewParser:
     def write_headers(self):
         with open('reviews.csv', 'w', newline='', encoding="utf-8") as f:
             writer = csv.writer(f)
-            writer.writerow(self.headers)
+            writer.writerow(settings.headers)
 
     def write_file(self, data):
         print('Writing to file')
         data = json.loads(data)
 
         with open('reviews.csv', "a", newline='', encoding="utf-8") as f:
-            for review in data[self.reviews_index]:
+            for review in data[settings.reviews_index]:
                 writer = csv.writer(f)
                 writer.writerow(self.get_review_data(review))
 
@@ -110,7 +91,7 @@ class ReviewParser:
         did_owner_reply = False
         self.reviews_count += 1
         print(f'Getting review {self.reviews_count}')
-        for key, value in self.review_format.items():
+        for key, value in settings.review_format.items():
             # Reply text is dependent on this
             if key == 'didOwnerReply':
                 did_owner_reply = review[value[0]] is not None
