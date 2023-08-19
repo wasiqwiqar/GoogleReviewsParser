@@ -1,3 +1,5 @@
+### This repository was made for a technical assignment
+
 # Google Reviews Parser
 
 This is a simple script to parse Google Reviews based on a search string.
